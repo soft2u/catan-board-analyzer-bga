@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Catan BGA Analyzer",
+  "version": "0.2.0",
+  "description": "Extract the Catan board from Board Game Arena and open analytics on catan.soft2u.ro",
+  "homepage_url": "https://github.com/soft2u/catan-board-analyzer-bga",
+  "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://boardgamearena.com/*",
+    "https://*.boardgamearena.com/*",
+    "https://catan.soft2u.ro/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Catan BGA Analyzer",
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src https://catan.soft2u.ro"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://boardgamearena.com/*",
+        "https://*.boardgamearena.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
