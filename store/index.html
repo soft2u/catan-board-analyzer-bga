@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catan BGA Analyzer — Chrome Web Store submission kit</title>
+  <style>
+    :root{color-scheme:light;--cream:#f4f1e6;--paper:#fffef8;--ink:#163e38;--muted:#526d5d;--line:#d6dece;--green:#275b46;--soft:#e7eddf;--gold:#f3d77e}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 Arial,Helvetica,sans-serif}a{color:var(--green);text-underline-offset:3px}button,a,input,textarea{outline-offset:4px}button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #ad7d1c}img{max-width:100%;display:block}button{font:inherit;cursor:pointer}h1,h2,h3,p{margin:0}h1{font-size:clamp(34px,4.8vw,58px);letter-spacing:-1.8px;line-height:1.08;max-width:760px}h2{font-size:28px;letter-spacing:-.6px;line-height:1.25}h3{font-size:18px;line-height:1.4}.wrap{width:min(1160px,calc(100% - 48px));margin:auto}.masthead{padding:25px 0;border-bottom:1px solid var(--line)}.masthead .wrap{display:flex;align-items:center;gap:14px}.brand-icon{width:44px;height:44px}.brand-name{font-weight:700;font-size:19px;letter-spacing:-.2px}.masthead small{display:block;color:var(--muted);font-size:12px;letter-spacing:.5px}.version{margin-left:auto;border:1px solid var(--line);padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700}.hero{padding:54px 0 36px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:1.7px;text-transform:uppercase;margin-bottom:15px;color:var(--green)}.hero .intro{max-width:720px;color:var(--muted);font-size:19px;margin-top:22px;line-height:1.55}.status{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:7px 12px;background:var(--soft);border-radius:7px;font-size:13px;font-weight:700}.status:before{content:"";width:8px;height:8px;background:#487a53;border-radius:50%}.nav{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:28px}.nav a{font-size:14px;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:4px}.section{padding:34px 0}.section-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:22px}.number{display:grid;place-items:center;flex:none;width:34px;height:34px;border:1px solid #b9c8b3;border-radius:50%;font-size:13px;font-weight:700}.section-head p{color:var(--muted);margin-top:7px;max-width:790px}.upload-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:20px}.package{background:var(--ink);color:var(--paper);border-radius:20px;padding:29px;display:flex;flex-direction:column;align-items:flex-start}.package .label{font-size:11px;letter-spacing:1.5px;font-weight:700;color:#d7e5bd}.package h3{font-size:25px;margin-top:13px;letter-spacing:-.5px}.package .filename{font:14px/1.5 Consolas,monospace;overflow-wrap:anywhere;margin-top:11px;color:#d7e5cb}.package p{margin:16px 0 23px;max-width:520px;color:#d7e5d7;font-size:15px}.download{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#253c2b;border-radius:9px;padding:11px 17px;text-decoration:none;font-size:14px;font-weight:700}.package .meta{margin-top:17px;font-size:12px;color:#d7e5cb}.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:25px}.kit p{margin:12px 0;color:var(--muted);font-size:15px}.kit ul{padding-left:20px;margin:13px 0 0;color:var(--muted);font-size:14px}.verified{display:flex;flex-wrap:wrap;gap:8px 20px;padding:17px 0 0;font-size:13px;color:var(--muted)}.verified span:before{content:"✓";margin-right:7px;color:var(--green);font-weight:700}.copy-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.copy-card{padding:22px}.copy-card.wide{grid-column:1/-1}.field-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:13px}.field-head label{font-size:14px;font-weight:700}.copy{border:1px solid #bed0b6;background:var(--soft);color:var(--ink);padding:5px 12px;border-radius:7px;font-size:12px;font-weight:700;white-space:nowrap}.copy:hover{background:#dce7d1}.field-note{font-size:12px;color:var(--muted);margin-top:10px}textarea{width:100%;resize:vertical;font:14px/1.6 Arial,Helvetica,sans-serif;color:#274a3b;border:1px solid #dce3d3;border-radius:8px;background:#f8f9f1;padding:12px;min-height:80px}#short-description{min-height:107px}#single-purpose{min-height:96px}#detailed-description{min-height:400px}.copy-status{min-height:23px;margin-top:10px;color:var(--green);font-size:13px}.asset-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.asset{border:1px solid var(--line);border-radius:15px;background:var(--paper);overflow:hidden}.asset .preview{display:grid;place-items:center;background:#e7eadf;aspect-ratio:8/5;padding:0}.asset img{width:100%;height:100%;object-fit:contain}.asset .caption{padding:17px}.asset h3{font-size:15px}.asset p{font-size:12px;color:var(--muted);margin-top:4px}.asset .file{display:block;font-size:12px;margin-top:10px;overflow-wrap:anywhere}.secondary-assets{margin-top:18px;grid-template-columns:.8fr 1fr 1.5fr}.asset.icon .preview img{width:128px;height:128px}.secondary-assets .preview{aspect-ratio:5/3;padding:16px}.secondary-assets .preview img{height:auto}.asset-note{color:var(--muted);font-size:13px;margin-top:15px}.finish-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}.todo{padding-left:20px;margin:15px 0 0}.todo li{padding-left:3px;margin:11px 0;color:var(--muted);font-size:14px}.todo strong{color:var(--ink)}.resource-list{display:grid;margin-top:13px}.resource-list a{padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}.resource-list a:last-child{border-bottom:0}.resource-list span{display:block;color:var(--muted);font-size:12px;text-decoration:none}.pending{margin-top:20px;padding:19px 22px;border:1px solid #d9c98e;background:#faf4dc;border-radius:13px;font-size:14px;color:#5b512c}.pending strong{display:block;margin-bottom:4px}.footer{margin-top:34px;padding:26px 0 35px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.footer .wrap{display:flex;justify-content:space-between;gap:20px}.footer a{white-space:nowrap}
+    @media(max-width:800px){.upload-grid,.finish-grid{grid-template-columns:1fr}.asset-grid{grid-template-columns:1fr 1fr}.secondary-assets{grid-template-columns:1fr 1fr}.secondary-assets .asset:last-child{grid-column:1/-1}.copy-grid{grid-template-columns:1fr}.hero{padding-top:36px}.section{padding:26px 0}.package{padding:25px}.footer .wrap{display:block}.footer a{display:inline-block;margin-top:10px}}
+    @media(max-width:520px){.wrap{width:calc(100% - 32px)}.brand-name{font-size:16px}.version{padding:4px 9px}.masthead small{font-size:11px}.hero .intro{font-size:17px}.asset-grid,.secondary-assets{grid-template-columns:1fr}.secondary-assets .asset:last-child{grid-column:auto}.card{padding:20px}.section-head{gap:12px}h2{font-size:24px}.nav{gap:10px 17px}.package h3{font-size:23px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body id="top">
+  <header class="masthead"><div class="wrap"><img class="brand-icon" src="assets/store-icon-128.png" width="44" height="44" alt=""><div><div class="brand-name">Catan BGA Analyzer</div><small>CHROME WEB STORE · SUBMISSION KIT</small></div><span class="version">v0.2.2</span></div></header>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Ready for the publisher's final checks</div>
+      <h1>Your store submission,<br>prepared locally.</h1>
+      <p class="intro">The extension package, listing copy, privacy notes, and images are gathered here. Start with the release ZIP, then complete the owner-controlled steps in the Chrome Web Store dashboard.</p>
+      <div class="status">Prepared locally · Not submitted to the store</div>
+      <nav class="nav" aria-label="Submission guide"><a href="#package">01 · Upload package</a><a href="#copy">02 · Copy listing</a><a href="#images">03 · Add images</a><a href="#finish">04 · Finish checks</a></nav>
+    </section>
+
+    <section class="section" id="package" aria-labelledby="package-heading">
+      <div class="section-head"><span class="number">01</span><div><h2 id="package-heading">The file for the package upload</h2><p>Upload only the release ZIP below in the dashboard's extension package field.</p></div></div>
+      <div class="upload-grid">
+        <div class="package"><span class="label">CHROME EXTENSION PACKAGE</span><h3>Release ZIP · v0.2.2</h3><div class="filename">catan-bga-analyzer-v0.2.2.zip</div><p>Contains the manifest, bundled extension code, and four icon sizes. Listing documents and store artwork are deliberately excluded.</p><a class="download" href="../dist/catan-bga-analyzer-v0.2.2.zip" download>Download the upload ZIP <span aria-hidden="true">↗</span></a><div class="meta">11 runtime files · Manifest V3 · No additional permissions</div></div>
+        <aside class="card kit"><h3>Keep the whole kit beside you</h3><p>This guide belongs to the complete preparation kit. Use its other files in the dashboard's matching fields.</p><ul><li>Paste the listing and single-purpose text.</li><li>Upload screenshots and promotional images separately.</li><li>Review the privacy declarations and reviewer instructions.</li></ul><p><strong>Do not upload the whole source folder or whole-kit archive as the extension package.</strong></p></aside>
+      </div>
+      <div class="verified" aria-label="Completed technical checks"><span>20 automated tests passed</span><span>JavaScript and manifest checked</span><span>Runtime ZIP and icon paths verified</span></div>
+    </section>
+
+    <section class="section" id="copy" aria-labelledby="copy-heading">
+      <div class="section-head"><span class="number">02</span><div><h2 id="copy-heading">Copy the listing text</h2><p>These fields follow <a href="listing-en.md">listing-en.md</a> and <a href="privacy-declarations.md">privacy-declarations.md</a>. Use the current dashboard's matching fields and review before saving.</p></div></div>
+      <div class="copy-grid">
+        <div class="card copy-card"><div class="field-head"><label for="listing-name">Name</label><button type="button" class="copy" data-copy="listing-name">Copy name</button></div><textarea id="listing-name" rows="2" readonly spellcheck="false">Catan BGA Analyzer</textarea><p class="field-note">Matches the extension manifest.</p></div>
+        <div class="card copy-card"><div class="field-head"><label for="short-description">Short description</label><button type="button" class="copy" data-copy="short-description">Copy description</button></div><textarea id="short-description" rows="3" readonly spellcheck="false">Import a Classic Catan board from Board Game Arena for analysis. Leaves the BGA board and game state unchanged.</textarea><p class="field-note">Matches the extension manifest.</p></div>
+        <div class="card copy-card wide"><div class="field-head"><label for="single-purpose">Single purpose · Privacy tab</label><button type="button" class="copy" data-copy="single-purpose">Copy purpose</button></div><textarea id="single-purpose" rows="3" readonly spellcheck="false">Import the user's selected Classic Catan board from Board Game Arena into catan.soft2u.ro for a public, shareable board-analysis page, with optional source-table identification and related import support and diagnostics.</textarea></div>
+        <div class="card copy-card wide"><div class="field-head"><label for="detailed-description">Detailed description</label><button type="button" class="copy" data-copy="detailed-description">Copy full listing</button></div><textarea id="detailed-description" rows="19" readonly spellcheck="false">Study a Classic Catan board from Board Game Arena on a separate analysis page. Catan BGA Analyzer imports its tile layout, number tokens, and harbors into catan.soft2u.ro, where you can explore settlement scores, opening pairs, resource probabilities, and harbor access.
+
+YOUR BGA BOARD STAYS UNCHANGED
+
+The extension does not rearrange tiles or numbers, change resources or game state, place pieces, submit moves, or automate play. It adds its own floating control to the page and opens the analysis in a new tab.
+
+HOW TO USE IT
+
+1. Open a supported Classic Catan board on Board Game Arena and wait for it to load.
+2. Open the extension popup or use its floating control.
+3. Read the data and fair-play notice, then choose Send board for analysis.
+4. Explore the imported board on catan.soft2u.ro.
+
+The extension reads the board fields already loaded in BGA's game frame. It falls back to visible board elements when runtime data is unavailable. It supports the standard 19-tile Classic layout, including supported game iframes. Expansion and custom layouts are not supported.
+
+WHAT IS SHARED
+
+Sending transfers tiles, numbers, harbors, fixed source identifiers, and the BGA table ID when available. The service saves a public, shareable board and retains import metadata, including the originating IP address. Choosing Send also consents to administrators inspecting this submitted board and table ID for import support and diagnostics. Administrators can link imports to their source tables and count repeated imports. Do not send a board you want kept private.
+
+The extension does not extract names, private hands, chat, scores, moves, passwords, or BGA cookies. It does not transmit the full BGA URL or general browsing history. Read the linked privacy notice for storage, access, and deletion.
+
+USE WHERE PERMITTED
+
+Use analysis only where BGA rules and your table or event rules permit it. This extension does not claim BGA authorization for strategic assistance. It is an unofficial project, unaffiliated with and not endorsed by Board Game Arena, Catan GmbH, or CATAN Studio.</textarea><p class="field-note">The original BGA game is unchanged; the extension adds its own floating control. No claim of BGA or CATAN endorsement.</p></div>
+      </div>
+      <p id="copy-status" class="copy-status" role="status" aria-live="polite">Copy buttons work offline. If clipboard access is unavailable, the text is selected for manual copying.</p>
+    </section>
+
+    <section class="section" id="images" aria-labelledby="images-heading">
+      <div class="section-head"><span class="number">03</span><div><h2 id="images-heading">Store images, ready to review</h2><p>Open each full-size image before uploading it to the corresponding image field. Images belong to the listing, not the runtime ZIP.</p></div></div>
+      <div class="asset-grid">
+        <article class="asset"><a class="preview" href="assets/screenshot-01.png"><img src="assets/screenshot-01.png" width="1280" height="800" loading="lazy" alt="Extension popup and explanation of the user-triggered board import"></a><div class="caption"><h3>01 · Import when you choose</h3><p>Screenshot · 1280 × 800</p><a class="file" href="assets/screenshot-01.png" download>Download screenshot-01.png</a></div></article>
+        <article class="asset"><a class="preview" href="assets/screenshot-02.png"><img src="assets/screenshot-02.png" width="1280" height="800" loading="lazy" alt="Board overview on the separate analysis website"></a><div class="caption"><h3>02 · Read the board and rankings</h3><p>Screenshot · 1280 × 800</p><a class="file" href="assets/screenshot-02.png" download>Download screenshot-02.png</a></div></article>
+        <article class="asset"><a class="preview" href="assets/screenshot-03.png"><img src="assets/screenshot-03.png" width="1280" height="800" loading="lazy" alt="Starting-position analysis on the separate analysis website"></a><div class="caption"><h3>03 · Compare opening pairs</h3><p>Screenshot · 1280 × 800</p><a class="file" href="assets/screenshot-03.png" download>Download screenshot-03.png</a></div></article>
+      </div>
+      <div class="asset-grid secondary-assets">
+        <article class="asset icon"><a class="preview" href="assets/store-icon-128.png"><img src="assets/store-icon-128.png" width="128" height="128" loading="lazy" alt="Catan BGA Analyzer original green and cream icon"></a><div class="caption"><h3>Store icon</h3><p>128 × 128 PNG</p><a class="file" href="assets/store-icon-128.png" download>Download store-icon-128.png</a></div></article>
+        <article class="asset"><a class="preview" href="assets/promo-small-440x280.png"><img src="assets/promo-small-440x280.png" width="440" height="280" loading="lazy" alt="Small promotional artwork for Catan BGA Analyzer"></a><div class="caption"><h3>Small promotional tile</h3><p>440 × 280 PNG</p><a class="file" href="assets/promo-small-440x280.png" download>Download promo-small-440x280.png</a></div></article>
+        <article class="asset"><a class="preview" href="assets/promo-marquee-1400x560.png"><img src="assets/promo-marquee-1400x560.png" width="1400" height="560" loading="lazy" alt="Wide promotional artwork for Catan BGA Analyzer"></a><div class="caption"><h3>Marquee promotional image</h3><p>1400 × 560 PNG</p><a class="file" href="assets/promo-marquee-1400x560.png" download>Download promo-marquee-1400x560.png</a></div></article>
+      </div>
+      <p class="asset-note">The current dashboard determines which image fields are required. Keep the original PNG dimensions and review the images for private information before submission.</p>
+    </section>
+
+    <section class="section" id="finish" aria-labelledby="finish-heading">
+      <div class="section-head"><span class="number">04</span><div><h2 id="finish-heading">Finish the publisher checks</h2><p>The package is prepared. Account details, accurate declarations, and the final authenticated BGA check still need the publisher's attention.</p></div></div>
+      <div class="finish-grid">
+        <article class="card"><h3>Still pending before submission</h3><ol class="todo"><li><strong>Publisher account and terms.</strong> Confirm the account, identity/contact details, any requested trader status, distribution choices, and applicable developer terms.</li><li><strong>Privacy and data declarations.</strong> Confirm real server practices, publish the reviewed privacy policy, and make accurate dashboard declarations. Do not claim that no data is collected.</li><li><strong>Authenticated BGA check.</strong> Load the extracted final ZIP and verify a fresh, permitted import through both controls. Confirm the board/game state stays unchanged and the optional source-table ID is correct.</li><li><strong>Reviewer access.</strong> Supply a working, authorized tutorial or replay URL and access instructions. Put any necessary test credentials only in the private dashboard field.</li><li><strong>Review the draft.</strong> Inspect the listing, images, privacy fields, and publishing preference before choosing to submit.</li></ol></article>
+        <aside class="card"><h3>Detailed handoff documents</h3><div class="resource-list"><a href="listing-en.md">English listing copy<span>Name, descriptions, links, and image order</span></a><a href="privacy-declarations.md">Privacy declarations<span>Purpose, permissions, data categories, and Limited Use</span></a><a href="reviewer-instructions.md">Reviewer instructions<span>Expected behavior and access details to complete</span></a><a href="asset-notes.md">Image sources and upload sizes<span>Original branding and actual public sample interface</span></a><a href="submission-checklist.md">Submission checklist<span>Package, account, privacy, and review steps</span></a><a href="../PRIVACY.md">Extension privacy notice<span>The reviewed policy to publish at its public URL</span></a></div></aside>
+      </div>
+      <div class="pending"><strong>No store submission has been made.</strong>This local kit does not create a publisher account, accept terms, certify data practices, or submit a store item. The final authenticated BGA import check remains pending. Google decides review and publication; approval and timing are not guaranteed.</div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap"><span>Prepared for Catan BGA Analyzer v0.2.2 · 12 November 2026<br>Offline guide. No network requests, tracking, or external scripts.</span><a href="#top">Back to top ↑</a></div></footer>
+  <script>
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const field = document.getElementById(button.dataset.copy);
+        const status = document.getElementById("copy-status");
+        let copied = false;
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(field.value);
+            copied = true;
+          }
+        } catch { /* Local-file clipboard access may be unavailable. */ }
+        if (!copied) {
+          field.focus();
+          field.select();
+          field.setSelectionRange(0, field.value.length);
+          try { copied = document.execCommand("copy"); } catch { copied = false; }
+        }
+        const label = document.querySelector('label[for="' + field.id + '"]').textContent;
+        status.textContent = copied ? label + " copied." : label + " selected. Press Ctrl+C (or Command+C) to copy.";
+        if (copied) button.focus();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -59,9 +59,15 @@
 <body>
   <h1>Catan BGA Analyzer</h1>
   <p class="notice">
-    Sends visible board tiles, numbers, harbors, and the BGA table number when available to
-    catan.soft2u.ro, where a shareable analytics map is saved and linked to its source table.
+    Sends board tiles, numbers, harbors, and the BGA table ID when available to
+    catan.soft2u.ro. The service saves a public, shareable board.
+    By choosing Send, you consent to service administrators inspecting this submitted board
+    and table ID for import support and diagnostics.
     It does not send cards, chat, player names, or BGA login data.
+  </p>
+  <p>
+    Reads board data already loaded in the BGA page, with visible board elements as a fallback.
+    Adds its own analysis button without changing the game state or making moves.
   </p>
   <p class="notice fair-play">
     Use only where permitted. Live strategic assistance may conflict with
@@ -70,7 +76,7 @@
   <button id="analyzeBtn">Send board for analysis</button>
   <div id="status"></div>
   <div class="links">
-    <a href="https://catan.soft2u.ro/tournaments/privacy" target="_blank" rel="noopener">Privacy notice</a>
+    <a href="https://github.com/soft2u/catan-board-analyzer-bga/blob/main/PRIVACY.md" target="_blank" rel="noopener">Extension privacy notice</a>
   </div>
   <script src="popup.js"></script>
 </body>

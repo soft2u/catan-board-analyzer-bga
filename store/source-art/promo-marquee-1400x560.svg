@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="560" viewBox="0 0 1400 560"><rect width="1400" height="560" fill="#163e38"/><g font-family="Arial, Helvetica, sans-serif">
+  <circle cx="1045" cy="280" r="282" fill="#214b43"/>
+  <circle cx="1045" cy="280" r="267" fill="none" stroke="#94d7b7" stroke-opacity=".18"/>
+  <polygon points="986.30,95.00 986.30,145.00 943.00,170.00 899.70,145.00 899.70,95.00 943.00,70.00" fill="#789f7c" stroke="#163e38" stroke-width="5"/><polygon points="1078.30,95.00 1078.30,145.00 1035.00,170.00 991.70,145.00 991.70,95.00 1035.00,70.00" fill="#c6a252" stroke="#163e38" stroke-width="5"/><polygon points="1170.30,95.00 1170.30,145.00 1127.00,170.00 1083.70,145.00 1083.70,95.00 1127.00,70.00" fill="#d1b992" stroke="#163e38" stroke-width="5"/><polygon points="940.30,175.00 940.30,225.00 897.00,250.00 853.70,225.00 853.70,175.00 897.00,150.00" fill="#92bc89" stroke="#163e38" stroke-width="5"/><polygon points="1032.30,175.00 1032.30,225.00 989.00,250.00 945.70,225.00 945.70,175.00 989.00,150.00" fill="#7b9895" stroke="#163e38" stroke-width="5"/><polygon points="1124.30,175.00 1124.30,225.00 1081.00,250.00 1037.70,225.00 1037.70,175.00 1081.00,150.00" fill="#bb7c5e" stroke="#163e38" stroke-width="5"/><polygon points="1216.30,175.00 1216.30,225.00 1173.00,250.00 1129.70,225.00 1129.70,175.00 1173.00,150.00" fill="#789f7c" stroke="#163e38" stroke-width="5"/><polygon points="894.30,255.00 894.30,305.00 851.00,330.00 807.70,305.00 807.70,255.00 851.00,230.00" fill="#c6a252" stroke="#163e38" stroke-width="5"/><polygon points="986.30,255.00 986.30,305.00 943.00,330.00 899.70,305.00 899.70,255.00 943.00,230.00" fill="#d1b992" stroke="#163e38" stroke-width="5"/><polygon points="1078.30,255.00 1078.30,305.00 1035.00,330.00 991.70,305.00 991.70,255.00 1035.00,230.00" fill="#92bc89" stroke="#163e38" stroke-width="5"/><polygon points="1170.30,255.00 1170.30,305.00 1127.00,330.00 1083.70,305.00 1083.70,255.00 1127.00,230.00" fill="#7b9895" stroke="#163e38" stroke-width="5"/><polygon points="1262.30,255.00 1262.30,305.00 1219.00,330.00 1175.70,305.00 1175.70,255.00 1219.00,230.00" fill="#bb7c5e" stroke="#163e38" stroke-width="5"/><polygon points="940.30,335.00 940.30,385.00 897.00,410.00 853.70,385.00 853.70,335.00 897.00,310.00" fill="#789f7c" stroke="#163e38" stroke-width="5"/><polygon points="1032.30,335.00 1032.30,385.00 989.00,410.00 945.70,385.00 945.70,335.00 989.00,310.00" fill="#c6a252" stroke="#163e38" stroke-width="5"/><polygon points="1124.30,335.00 1124.30,385.00 1081.00,410.00 1037.70,385.00 1037.70,335.00 1081.00,310.00" fill="#d1b992" stroke="#163e38" stroke-width="5"/><polygon points="1216.30,335.00 1216.30,385.00 1173.00,410.00 1129.70,385.00 1129.70,335.00 1173.00,310.00" fill="#92bc89" stroke="#163e38" stroke-width="5"/><polygon points="986.30,415.00 986.30,465.00 943.00,490.00 899.70,465.00 899.70,415.00 943.00,390.00" fill="#7b9895" stroke="#163e38" stroke-width="5"/><polygon points="1078.30,415.00 1078.30,465.00 1035.00,490.00 991.70,465.00 991.70,415.00 1035.00,390.00" fill="#bb7c5e" stroke="#163e38" stroke-width="5"/><polygon points="1170.30,415.00 1170.30,465.00 1127.00,490.00 1083.70,465.00 1083.70,415.00 1127.00,390.00" fill="#789f7c" stroke="#163e38" stroke-width="5"/>
+  <circle cx="1035" cy="280" r="85" fill="#163e38" stroke="#e5b966" stroke-width="3"/>
+  <g transform="translate(971 216) scale(1)">
+
+  <path d="M58 16.5 Q64 13 70 16.5 L103.3 35.8 Q109.3 39.3 109.3 46.2 V81.8 Q109.3 88.7 103.3 92.2 L70 111.5 Q64 115 58 111.5 L24.7 92.2 Q18.7 88.7 18.7 81.8 V46.2 Q18.7 39.3 24.7 35.8 Z" fill="#163e38" stroke="#e5b966" stroke-width="4"/>
+  <rect x="38" y="65" width="12" height="23" rx="3" fill="#94d7b7"/>
+  <rect x="58" y="52" width="12" height="36" rx="3" fill="#fbf4df"/>
+  <rect x="78" y="39" width="12" height="49" rx="3" fill="#e5b966"/>
+
+</g>
+  <g transform="translate(50 36) scale(0.6875)">
+
+  <path d="M58 16.5 Q64 13 70 16.5 L103.3 35.8 Q109.3 39.3 109.3 46.2 V81.8 Q109.3 88.7 103.3 92.2 L70 111.5 Q64 115 58 111.5 L24.7 92.2 Q18.7 88.7 18.7 81.8 V46.2 Q18.7 39.3 24.7 35.8 Z" fill="#163e38" stroke="#e5b966" stroke-width="4"/>
+  <rect x="38" y="65" width="12" height="23" rx="3" fill="#94d7b7"/>
+  <rect x="58" y="52" width="12" height="36" rx="3" fill="#fbf4df"/>
+  <rect x="78" y="39" width="12" height="49" rx="3" fill="#e5b966"/>
+
+</g>
+  <text x="154" y="90" fill="#94d7b7" font-size="18" font-weight="700" letter-spacing="3">BOARD → INSIGHT</text>
+  <text x="62" y="224" fill="#fbf4df" font-size="70" font-weight="700">Catan BGA</text>
+  <text x="62" y="302" fill="#fbf4df" font-size="70" font-weight="700">Analyzer</text>
+  <rect x="65" y="335" width="72" height="5" rx="2" fill="#e5b966"/>
+  <text x="62" y="394" fill="#dceae2" font-size="28">Your board. A clearer start.</text>
+  <text x="64" y="446" fill="#94d7b7" font-size="19">Visible board import · Opening analysis</text>
+  <text x="64" y="514" fill="#94d7b7" font-size="14">Unofficial extension · catan.soft2u.ro</text></g></svg>

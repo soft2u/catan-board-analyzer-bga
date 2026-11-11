@@ -179,11 +179,19 @@
 
     const disclosure = document.createElement("div");
     disclosure.textContent =
-      "Sends visible board tiles, numbers, harbors, and the BGA table ID when available to catan.soft2u.ro.";
+      "Sends board tiles, numbers, harbors, and the BGA table ID when available to catan.soft2u.ro. The service saves a public, shareable board. By choosing Send, you consent to service administrators inspecting this submitted board and table ID for import support and diagnostics.";
     disclosure.style.fontSize = "12px";
     disclosure.style.lineHeight = "1.35";
     disclosure.style.marginBottom = "8px";
     wrapper.appendChild(disclosure);
+
+    const behaviorNote = document.createElement("div");
+    behaviorNote.textContent =
+      "Reads loaded board data, or visible board elements as a fallback. Adds this button without changing the game state or making moves.";
+    behaviorNote.style.fontSize = "11px";
+    behaviorNote.style.lineHeight = "1.35";
+    behaviorNote.style.marginBottom = "8px";
+    wrapper.appendChild(behaviorNote);
 
     const fairPlay = document.createElement("div");
     fairPlay.textContent = "Use only where live analysis is permitted.";

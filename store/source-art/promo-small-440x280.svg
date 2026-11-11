@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280"><rect width="440" height="280" fill="#163e38"/><g font-family="Arial, Helvetica, sans-serif">
+  <polygon points="511.99,181.50 511.99,308.50 402.00,372.00 292.01,308.50 292.01,181.50 402.00,118.00" fill="none" stroke="#94d7b7" stroke-opacity=".13" stroke-width="2"/>
+  <polygon points="486.87,196.00 486.87,294.00 402.00,343.00 317.13,294.00 317.13,196.00 402.00,147.00" fill="none" stroke="#e5b966" stroke-opacity=".15" stroke-width="2"/>
+  <g transform="translate(330 17) scale(0.65625)">
+
+  <path d="M58 16.5 Q64 13 70 16.5 L103.3 35.8 Q109.3 39.3 109.3 46.2 V81.8 Q109.3 88.7 103.3 92.2 L70 111.5 Q64 115 58 111.5 L24.7 92.2 Q18.7 88.7 18.7 81.8 V46.2 Q18.7 39.3 24.7 35.8 Z" fill="#163e38" stroke="#e5b966" stroke-width="4"/>
+  <rect x="38" y="65" width="12" height="23" rx="3" fill="#94d7b7"/>
+  <rect x="58" y="52" width="12" height="36" rx="3" fill="#fbf4df"/>
+  <rect x="78" y="39" width="12" height="49" rx="3" fill="#e5b966"/>
+
+</g>
+  <text x="30" y="44" fill="#94d7b7" font-size="12" font-weight="700" letter-spacing="2">BOARD → INSIGHT</text>
+  <text x="28" y="112" fill="#fbf4df" font-size="40" font-weight="700">Catan BGA</text>
+  <text x="28" y="157" fill="#fbf4df" font-size="40" font-weight="700">Analyzer</text>
+  <rect x="30" y="180" width="48" height="4" rx="2" fill="#e5b966"/>
+  <text x="30" y="220" fill="#dceae2" font-size="19">Your board. A clearer start.</text>
+  <text x="30" y="252" fill="#94d7b7" font-size="11">Unofficial extension · catan.soft2u.ro</text></g></svg>

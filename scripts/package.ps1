@@ -16,7 +16,11 @@ $runtimeFiles = @(
     "popup.html",
     "popup.js",
     "import.html",
-    "import.js"
+    "import.js",
+    "icons/icon-16.png",
+    "icons/icon-32.png",
+    "icons/icon-48.png",
+    "icons/icon-128.png"
 )
 
 $resolvedFiles = foreach ($relativePath in $runtimeFiles) {
@@ -25,7 +29,10 @@ $resolvedFiles = foreach ($relativePath in $runtimeFiles) {
         throw "Required runtime file is missing: $relativePath"
     }
 
-    (Resolve-Path -LiteralPath $candidate).Path
+    [PSCustomObject]@{
+        SourcePath = (Resolve-Path -LiteralPath $candidate).Path
+        EntryName = $relativePath
+    }
 }
 
 $distPath = Join-Path $repositoryRoot "dist"
@@ -43,9 +50,49 @@ if ($archiveParent -ne $resolvedDistPath) {
     throw "Refusing to write the release archive outside the dist directory."
 }
 
-if (Test-Path -LiteralPath $archivePath) {
-    Remove-Item -LiteralPath $archivePath -Force
-}
+Add-Type -AssemblyName System.IO.Compression
+Add-Type -AssemblyName System.IO.Compression.FileSystem
 
-Compress-Archive -LiteralPath $resolvedFiles -DestinationPath $archivePath
+# Explicit entry names retain icons/ paths while excluding store artwork, tests,
+# documentation, and any other files added to the source directory.
+$temporaryArchivePath = Join-Path $resolvedDistPath ([Guid]::NewGuid().ToString("N") + ".zip.tmp")
+try {
+    $archive = [System.IO.Compression.ZipFile]::Open(
+        $temporaryArchivePath,
+        [System.IO.Compression.ZipArchiveMode]::Create
+    )
+    try {
+        foreach ($file in $resolvedFiles) {
+            $entry = $archive.CreateEntry(
+                $file.EntryName,
+                [System.IO.Compression.CompressionLevel]::Optimal
+            )
+            # Set the fixed timestamp before opening an entry in Create mode.
+            $entry.LastWriteTime = [DateTimeOffset]::Parse("2000-01-01T00:00:00Z")
+            $sourceStream = [System.IO.File]::OpenRead($file.SourcePath)
+            try {
+                $entryStream = $entry.Open()
+                try {
+                    $sourceStream.CopyTo($entryStream)
+                }
+                finally {
+                    $entryStream.Dispose()
+                }
+            }
+            finally {
+                $sourceStream.Dispose()
+            }
+        }
+    }
+    finally {
+        $archive.Dispose()
+    }
+    # Replace the previous release only after the complete archive is closed.
+    Move-Item -LiteralPath $temporaryArchivePath -Destination $archivePath -Force
+}
+finally {
+    if (Test-Path -LiteralPath $temporaryArchivePath) {
+        Remove-Item -LiteralPath $temporaryArchivePath -Force
+    }
+}
 Write-Output "Created $archivePath"

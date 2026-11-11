@@ -1,0 +1,36 @@
+CATAN BGA ANALYZER — CHROME WEB STORE KIT v0.2.2
+
+Open store/index.html (or index.html when already inside the store folder).
+It has image previews, copy buttons, upload links, and the remaining checklist.
+
+UPLOAD AS THE EXTENSION PACKAGE:
+dist/catan-bga-analyzer-v0.2.2.zip
+
+Do not upload the entire preparation-kit ZIP in the package field.
+
+STORE IMAGES:
+store/assets/store-icon-128.png
+store/assets/screenshot-01.png
+store/assets/screenshot-02.png
+store/assets/screenshot-03.png
+store/assets/promo-small-440x280.png (optional)
+store/assets/promo-marquee-1400x560.png (optional)
+
+TEXT AND DECLARATIONS:
+store/listing-en.md
+store/privacy-declarations.md
+store/reviewer-instructions.md
+store/submission-checklist.md
+PRIVACY.md
+
+The extension reads board data already loaded in BGA's page, with visible
+board elements as a fallback. It does not change the BGA board/game state or
+make moves. It adds its own floating analysis control to the page.
+
+Completed: 20 automated tests, JavaScript/manifest checks, 11-file runtime ZIP
+audit, icon dimensions, and visual checks of all store images.
+
+Before submitting: complete the developer account and required declarations;
+confirm the actual service practices and publish the reviewed privacy policy;
+load the final ZIP and check a fresh permitted BGA import through both controls.
+GitHub releases and Chrome Web Store submission are separate steps.

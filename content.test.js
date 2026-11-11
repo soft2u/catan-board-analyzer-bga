@@ -109,6 +109,24 @@ test("popup click reaches the same content payload builder and preserves a 20-di
   });
 });
 
+test("both entry points disclose public storage and scoped administrator access before the send action", () => {
+  const content = loadContent(rawBoard("123"));
+  const button = content.document.getElementById("soft2u-catan-analyze-btn");
+  const siblings = button.parentElement.children;
+  const floatingNotice = siblings.slice(0, siblings.indexOf(button)).map((node) => node.textContent || "").join(" ");
+  const popupHtml = fs.readFileSync(path.join(__dirname, "popup.html"), "utf8");
+  const popupNotice = popupHtml.slice(0, popupHtml.indexOf('<button id="analyzeBtn"'));
+
+  for (const notice of [floatingNotice, popupNotice]) {
+    const normalized = notice.replace(/\s+/g, " ");
+    assert.match(normalized, /BGA table ID when available/);
+    assert.match(normalized, /catan\.soft2u\.ro.*saves a public, shareable board/);
+    assert.match(normalized, /By choosing Send, you consent to service administrators inspecting this submitted board and table ID for import support and diagnostics/);
+    assert.match(normalized, /without changing the game state or making moves/);
+  }
+  assert.deepEqual(content.messages, []);
+});
+
 test("content only permits canonical valid table_id metadata and omits malformed identities", async () => {
   const values = [
     [123, "123"], ["000123", "123"], [Number.MAX_SAFE_INTEGER, String(Number.MAX_SAFE_INTEGER)],

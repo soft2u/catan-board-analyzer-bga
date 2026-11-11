@@ -1,9 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Catan BGA Analyzer",
-  "version": "0.2.1",
-  "description": "Extract the Catan board from Board Game Arena and open analytics on catan.soft2u.ro",
+  "version": "0.2.2",
+  "description": "Import a Classic Catan board from Board Game Arena for analysis. Leaves the BGA board and game state unchanged.",
   "homepage_url": "https://github.com/soft2u/catan-board-analyzer-bga",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
   "permissions": [
     "scripting"
   ],
@@ -17,7 +23,13 @@
   },
   "action": {
     "default_title": "Catan BGA Analyzer",
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
   },
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'; connect-src https://catan.soft2u.ro"

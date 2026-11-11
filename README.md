@@ -4,7 +4,9 @@ An unofficial Chrome extension that reads the visible Classic Catan board on
 Board Game Arena (BGA) and opens settlement and opening-pair analysis on
 [catan.soft2u.ro](https://catan.soft2u.ro/catan-board-analyzer).
 
-The extension does not automate play or make moves. Analysis is opened only
+The extension leaves the BGA board and game state unchanged. It does not place
+pieces, change resources or numbers, make moves, or automate play. It adds its
+own floating control to the page and opens analysis on a separate website only
 after the user presses **Send board for analysis**.
 
 > [!IMPORTANT]
@@ -22,7 +24,8 @@ Arena, Catan GmbH, or CATAN Studio.
 
 - Finds the Catan board in the BGA page, including boards rendered inside a
   game iframe.
-- Reads the 19 visible land tiles, number tokens, and visible harbors.
+- Reads the Classic board fields already loaded in the page's game runtime;
+  falls back to visible tile, number-token, and harbor elements when needed.
 - Normalizes the Classic-board tile order expected by the analyzer.
 - Sends the minimal board payload to `catan.soft2u.ro` over HTTPS.
 - Opens a shareable analytics page with settlement scoring, opening-pair
@@ -43,7 +46,7 @@ The extension sends:
 - the positive numeric BGA table ID, when available, to link the saved board to its source table;
 - fixed identifiers saying the source is BGA and the game is Catan.
 
-It does **not** collect or send:
+The transmitted payload excludes:
 
 - BGA usernames or player names;
 - cards, hands, chat, scores, moves, or dice history;
@@ -62,8 +65,8 @@ It can link back to the original BGA table and information visible there. Boards
 without a usable table ID can still be imported. Version 0.2.0 did not send table
 IDs, so older saved imports cannot recover that information automatically.
 
-The service saves the imported board so it can provide a shareable analytics
-URL. The website may retain the import timestamp and originating IP address as
+The service saves the imported board as a public, shareable analytics page.
+The website retains the import timestamp and originating IP address as
 described in [PRIVACY.md](PRIVACY.md) and the
 [website privacy notice](https://catan.soft2u.ro/tournaments/privacy). Optional
 website analytics are controlled by the consent banner on
@@ -106,12 +109,18 @@ Unpacked extensions do not update automatically.
 1. Open a BGA Catan tutorial, practice table, replay, completed game, or other
    page where analysis is permitted.
 2. Wait until the complete board is visible.
-3. Start the import in either way:
+3. Before sending, read the notice explaining public board storage, optional
+   table identity, and administrator inspection for import support and diagnostics.
+4. Start the import in either way:
    - press the floating **Send board for analysis** button; or
    - open the extension popup and press **Send board for analysis**.
-4. Review the privacy and fair-play notice before sending.
 5. A new tab briefly shows the secure handoff page and then opens the
    `catan.soft2u.ro` map analytics page.
+
+Sending consents to that specific inspection of the submitted board and table
+ID. Anyone with the resulting board link can view its analysis. Do not submit
+a board you want to keep private. The extension makes no changes to the source
+BGA board or game state.
 
 The imported analytics board is shown in BGA orientation so its positions are
 easier to compare with the source board, while number tokens remain readable.
@@ -266,12 +275,24 @@ player IDs, replay archive numbers, or timestamps.
 
 ## Publishing a release
 
+Version **0.2.2** includes the store preparation materials in [store/](store/).
+They are submission drafts, not evidence of publication or approval:
+
+- [English listing](store/listing-en.md)
+- [Privacy and permission declarations](store/privacy-declarations.md)
+- [Reviewer instructions](store/reviewer-instructions.md)
+- [Submission checklist](store/submission-checklist.md)
+
+Use the checklist to verify the exact ZIP, current privacy URL, real screenshots,
+publisher details, and consent behavior before submitting. Store approval is
+decided by Google. This project does not claim approval or affiliation from BGA.
+
 1. Update `version` in `manifest.json`.
 2. Add the release notes to [CHANGELOG.md](CHANGELOG.md).
 3. Run all validation commands.
 4. Build the ZIP with `scripts/package.ps1`.
 5. Inspect the ZIP and load its extracted contents in Chrome for a final test.
-6. Create a signed Git tag such as `v0.2.0`.
+6. Create a signed Git tag such as `v0.2.2`.
 7. Create a GitHub Release and attach the generated ZIP.
 
 GitHub releases remain manual/unpacked installations. A Chrome Web Store

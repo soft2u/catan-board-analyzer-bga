@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <title>Catan BGA Analyzer — hexagon and analysis bars</title>
+  <path d="M58 16.5 Q64 13 70 16.5 L103.3 35.8 Q109.3 39.3 109.3 46.2 V81.8 Q109.3 88.7 103.3 92.2 L70 111.5 Q64 115 58 111.5 L24.7 92.2 Q18.7 88.7 18.7 81.8 V46.2 Q18.7 39.3 24.7 35.8 Z" fill="#163e38" stroke="#e5b966" stroke-width="4"/>
+  <rect x="38" y="65" width="12" height="23" rx="3" fill="#94d7b7"/>
+  <rect x="58" y="52" width="12" height="36" rx="3" fill="#fbf4df"/>
+  <rect x="78" y="39" width="12" height="49" rx="3" fill="#e5b966"/>
+</svg>
