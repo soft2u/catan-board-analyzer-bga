@@ -28,7 +28,7 @@ jobs:
           node --check import.js
 
       - name: Run tests
-        run: node --test background.test.js import.test.js
+        run: node --test background.test.js content.test.js import.test.js
 
       - name: Validate manifest
         run: node -e "JSON.parse(require('fs').readFileSync('manifest.json', 'utf8'))"

@@ -40,6 +40,7 @@ The extension sends:
 - land-tile coordinates and resource types;
 - visible number tokens;
 - visible harbor coordinates and types;
+- the positive numeric BGA table ID, when available, to link the saved board to its source table;
 - fixed identifiers saying the source is BGA and the game is Catan.
 
 It does **not** collect or send:
@@ -47,13 +48,19 @@ It does **not** collect or send:
 - BGA usernames or player names;
 - cards, hands, chat, scores, moves, or dice history;
 - BGA login cookies, credentials, or authentication tokens;
-- the current page URL or title;
+- the full current page URL or title;
 - general browsing history.
 
 The transfer occurs only when you press the analysis button. The payload is
 sent as an HTTPS `POST`, without browser credentials or a referrer. It is
 briefly passed between extension pages in a URL fragment, removed before the
 network request, and never placed in the destination URL or query string.
+
+The table number is read from the selected game frame or the BGA page's `table`
+parameter. Only the numeric ID is sent, not the URL or its other parameters.
+It can link back to the original BGA table and information visible there. Boards
+without a usable table ID can still be imported. Version 0.2.0 did not send table
+IDs, so older saved imports cannot recover that information automatically.
 
 The service saves the imported board so it can provide a shareable analytics
 URL. The website may retain the import timestamp and originating IP address as
@@ -189,7 +196,7 @@ node --check background.js
 node --check content.js
 node --check popup.js
 node --check import.js
-node --test background.test.js import.test.js
+node --test background.test.js content.test.js import.test.js
 node -e "JSON.parse(require('fs').readFileSync('manifest.json', 'utf8'))"
 ```
 
@@ -225,6 +232,7 @@ The extension sends `POST https://catan.soft2u.ro/import-from-bga` with
   "source": "boardgamearena",
   "game": "catan",
   "variant": "classic",
+  "table_id": "937714674",
   "map": {
     "tiles": [
       {
@@ -250,6 +258,11 @@ The extension sends `POST https://catan.soft2u.ro/import-from-bga` with
 On success the service redirects to an HTTPS URL under
 `/map-analytics/{map-hash}`. The extension rejects an unexpected protocol,
 host, or destination path.
+
+`table_id` is optional: a positive decimal string of at most 20 digits, without
+leading zeroes. The live service stores it as `setup_data.bga.table_id` for source
+links and import analytics. Missing IDs are omitted rather than guessed from
+player IDs, replay archive numbers, or timestamps.
 
 ## Publishing a release
 

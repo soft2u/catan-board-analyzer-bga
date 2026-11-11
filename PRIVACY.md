@@ -1,6 +1,6 @@
 # Privacy Notice for Catan BGA Analyzer
 
-Last updated: 2026-07-26
+Last updated: 2026-11-11
 
 This notice describes the data handled by the Catan BGA Analyzer browser
 extension. The extension is an unofficial companion to
@@ -8,12 +8,13 @@ extension. The extension is an unofficial companion to
 
 ## Data sent when you request analysis
 
-The extension sends only the information needed to reconstruct the visible
-Catan board:
+The extension sends the information needed to reconstruct the visible
+Catan board and identify its source table:
 
 - land-tile coordinates and resource types;
 - visible number tokens;
 - visible harbor coordinates and types;
+- the positive numeric BGA table ID, when available;
 - fixed source, game, and board-variant identifiers.
 
 The extension does not continuously transmit data. A transfer occurs only
@@ -26,11 +27,17 @@ The extension does not collect or send:
 - BGA usernames or player names;
 - cards, hands, chat messages, scores, moves, or dice history;
 - BGA passwords, login cookies, authentication tokens, or other credentials;
-- the current BGA page URL or page title;
+- the full current BGA page URL or page title;
 - unrelated page content or general browsing history.
 
 It does not request Chrome's cookies, browsing-history, downloads, storage, or
 `<all_urls>` permissions.
+
+To find the table ID, the extension can read the current BGA frame or tab URL
+locally and extract only its numeric `table` parameter. It does not send or
+store that full URL or any other URL parameters. A table ID links back to the
+original BGA table and information visible there; it is not an anonymous board
+identifier. No additional browser permission is required.
 
 ## Transmission and storage
 
@@ -43,7 +50,7 @@ service URL or query string.
 
 The service validates and saves the imported board to provide a shareable
 analytics URL. Its server-side import record may include the board data, an
-import timestamp, and the originating IP address. Ordinary web-server security
+import timestamp, the BGA table ID when supplied, and the originating IP address. Ordinary web-server security
 and access logs may also contain connection metadata, but not the board payload
 as a URL query parameter.
 
@@ -57,7 +64,8 @@ extension neither grants analytics consent nor bypasses a rejection.
 - **Board Game Arena:** the extension reads the visible Catan board in the BGA
   page when you ask it to do so. No BGA credentials are sent to the analyzer.
 - **catan.soft2u.ro:** receives and stores the selected board and provides the
-  analysis page.
+  analysis page. Administrators can use the reported table ID to open the source
+  table and count repeated imports of that table.
 
 The extension does not include advertising SDKs or its own analytics service.
 

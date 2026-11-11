@@ -4,6 +4,24 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-11-11
+
+### Fixed
+
+- Preserve the source BGA table number through board extraction, normalization,
+  and the HTTPS import handoff, so new imports can show their source table in
+  the analytics panel.
+- Support game iframe and visible-board fallback extraction while leaving
+  unavailable IDs absent, including tutorials without a table number.
+
+### Changed
+
+- Send an optional validated numeric `table_id` alongside the board, with no
+  additional permissions. Full URLs, player details, and credentials remain
+  excluded from the payload.
+- Update the popup, floating-button disclosure, and privacy notice to describe
+  source-table metadata. Previously imported boards without IDs are unchanged.
+
 ## [0.2.0] - 2026-07-26
 
 ### Added

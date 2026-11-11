@@ -74,11 +74,12 @@ function loadImportPage({
   };
 }
 
-test("minimal board payload is posted as JSON without credentials or referrer", async () => {
+test("minimal board payload and exact table ID are posted without credentials or referrer", async () => {
   const payload = {
     source: "boardgamearena",
     game: "catan",
     variant: "classic",
+    table_id: "99999999999999999999",
     map: {
       tiles: [{ index: 0, x: 1, y: 2, type: 3, dice_value: 5 }],
       harbours: [],

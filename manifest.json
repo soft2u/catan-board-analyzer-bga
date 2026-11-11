@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Catan BGA Analyzer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Extract the Catan board from Board Game Arena and open analytics on catan.soft2u.ro",
   "homepage_url": "https://github.com/soft2u/catan-board-analyzer-bga",
   "permissions": [

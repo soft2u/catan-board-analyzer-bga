@@ -35,7 +35,7 @@ node --check background.js
 node --check content.js
 node --check popup.js
 node --check import.js
-node --test background.test.js import.test.js
+node --test background.test.js content.test.js import.test.js
 node -e "JSON.parse(require('fs').readFileSync('manifest.json', 'utf8'))"
 powershell -ExecutionPolicy Bypass -File .\scripts\package.ps1
 ```
@@ -44,9 +44,10 @@ Also manually verify:
 
 - tutorial and permitted live/replay page extraction;
 - popup and floating-button paths;
+- the correct source table ID, with no ID guessed for tutorials that do not have one;
 - a successful HTTPS handoff and analytics redirect;
 - a clear failure when no board is present;
-- no BGA cookies, credentials, player data, page URL, or page title in the
+- no BGA cookies, credentials, player data, full page URL, or page title in the
   request payload;
 - no board data in the destination URL query string.
 

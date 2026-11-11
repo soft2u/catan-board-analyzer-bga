@@ -52,11 +52,19 @@
   function buildPayloadFromRaw(raw) {
     const orderedTiles = normalizeClassicTileOrder(raw.tiles || []);
     const variant = orderedTiles.length === 19 ? "classic" : "unknown";
+    let tableId = raw.table_id;
+    if (typeof tableId === "number") {
+      tableId = Number.isSafeInteger(tableId) && tableId > 0 ? String(tableId) : null;
+    }
+    tableId = typeof tableId === "string" && tableId.length <= 20 && !/\D/.test(tableId)
+      ? tableId.replace(/^0+/, "")
+      : null;
 
     return {
       source: "boardgamearena",
       game: "catan",
       variant,
+      ...(tableId ? { table_id: tableId } : {}),
       map: {
         tiles: orderedTiles.map((tile, index) => ({
           index,
@@ -171,7 +179,7 @@
 
     const disclosure = document.createElement("div");
     disclosure.textContent =
-      "Sends only visible board tiles, numbers, and harbors to catan.soft2u.ro.";
+      "Sends visible board tiles, numbers, harbors, and the BGA table ID when available to catan.soft2u.ro.";
     disclosure.style.fontSize = "12px";
     disclosure.style.lineHeight = "1.35";
     disclosure.style.marginBottom = "8px";
